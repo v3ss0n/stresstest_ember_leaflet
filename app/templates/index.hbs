@@ -1,0 +1,26 @@
+<div class="row">
+
+  {{#if lat}}
+    {{#leaflet-map lat=lat lng=lng zoom=zoom tap=false minZoom=10 maxZoom=18
+        onZoomend=(action "updateCenter") onDragend=(action "updateCenter") class='ui ember-map segment  raised' as |layers| }}
+        {{layers.tile url='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}}
+      {{!-- {{layers.tile url='http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png'}} --}}
+      {{#each filteredLocations as |location|}}
+        {{#if location}}
+          {{#if (eq location.type "pokemon") }}
+            {{#marker-layer location=location.location}}
+              {{!-- {{#monstr-layer model=location}}
+              {{/monstr-layer}} --}}
+            {{/marker-layer}}
+          {{/if}}
+        {{/if}}
+      {{/each}}
+      {{#if circle}}
+        {{#layers.circle location=circle radius=100}}
+          <p><b>You Are Here!</b></p>
+        {{/layers.circle}}
+      {{/if}}
+    {{/leaflet-map}}
+  {{/if}}
+
+</div>

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'poke-look',
+    modulePrefix: 'monstr',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

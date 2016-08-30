@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    /*width: 100vw;*/
+}
+.ember-map {
+  max-width: 100%;
+  width: 90vw;
+  height: 85vh;
+  display: block;
+  border-radius: 2px;
+  /*box-shadow: 1px 1px 5px 4px rgba(85, 85, 85, 0.9);*/
+  max-height: 100%;
+}
+/*.dialog {
+
+}*/
+.leaflet-touch .leaflet-bar a {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+.scroll-pane {
+  height:65vh;
+  max-height:450px;
+}
+.scroller {
+  overflow-y: auto;
+}
